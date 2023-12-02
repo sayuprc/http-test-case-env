@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  php8.3:
+    image: http-test-case:8.3
+    container_name: http-test-case-8.3
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v3.x/8.3/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+  php8.2:
+    image: http-test-case:8.2
+    container_name: http-test-case-8.2
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v3.x/8.2/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+  php8.1:
+    image: http-test-case:8.1
+    container_name: http-test-case-8.1
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v3.x/8.1/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+  php8.0:
+    image: http-test-case:8.0
+    container_name: http-test-case-8.0
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v2.x/8.0/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+  php7.4:
+    image: http-test-case:7.4
+    container_name: http-test-case-7.4
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v1.x/7.4/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+  php7.3:
+    image: http-test-case:7.3
+    container_name: http-test-case-7.3
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/v1.x/7.3/php.ini:/usr/local/etc/php/php.ini
+      - vendor-store:/var/www/html/vendor
+
+volumes:
+  vendor-store:
