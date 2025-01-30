@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   php8.3:
     image: http-test-case:8.3
